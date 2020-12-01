@@ -68,7 +68,7 @@ app.post("/sub", (req, res) => {
     } else {
       myOBJ.status = "success";
       myOBJ.message = "the difference of given two numbers";
-      myOBJ.sum = res;
+      myOBJ.difference = res;
     }
   }
   res.send(myOBJ);
