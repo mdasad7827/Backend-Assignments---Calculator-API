@@ -29,17 +29,17 @@ app.post("/add", (req, res) => {
     myOBJ.status = "error";
     myOBJ.message = "Invalid data types";
   } else {
-    const res = num1 + num2;
-    if (num1 < -1000000 || num2 < -1000000 || res < -1000000) {
+    const result = num1 + num2;
+    if (num1 < -1000000 || num2 < -1000000 || result < -1000000) {
       myOBJ.status = "error";
       myOBJ.message = "Underflow";
-    } else if (num1 > 1000000 || num2 > 1000000 || res > 1000000) {
+    } else if (num1 > 1000000 || num2 > 1000000 || result > 1000000) {
       myOBJ.status = "error";
       myOBJ.message = "Overflow";
     } else {
       myOBJ.status = "success";
       myOBJ.message = "the sum of given two numbers";
-      myOBJ.sum = res;
+      myOBJ.sum = result;
     }
   }
   res.send(myOBJ);
@@ -58,17 +58,17 @@ app.post("/sub", (req, res) => {
     myOBJ.status = "error";
     myOBJ.message = "Invalid data types";
   } else {
-    const res = num1 - num2;
-    if (num1 < -1000000 || num2 < -1000000 || res < -1000000) {
+    const result = num1 - num2;
+    if (num1 < -1000000 || num2 < -1000000 || result < -1000000) {
       myOBJ.status = "error";
       myOBJ.message = "Underflow";
-    } else if (num1 > 1000000 || num2 > 1000000 || res > 1000000) {
+    } else if (num1 > 1000000 || num2 > 1000000 || result > 1000000) {
       myOBJ.status = "error";
       myOBJ.message = "Overflow";
     } else {
       myOBJ.status = "success";
       myOBJ.message = "the difference of given two numbers";
-      myOBJ.difference = res;
+      myOBJ.difference = result;
     }
   }
   res.send(myOBJ);
@@ -88,17 +88,17 @@ app.post("/multiply", (req, res) => {
     myOBJ.status = "error";
     myOBJ.message = "Invalid data types";
   } else {
-    const res = num1 * num2;
-    if (num1 < -1000000 || num2 < -1000000 || res < -1000000) {
+    const result = num1 * num2;
+    if (num1 < -1000000 || num2 < -1000000 || result < -1000000) {
       myOBJ.status = "error";
       myOBJ.message = "Underflow";
-    } else if (num1 > 1000000 || num2 > 1000000 || res > 1000000) {
+    } else if (num1 > 1000000 || num2 > 1000000 || result > 1000000) {
       myOBJ.status = "error";
       myOBJ.message = "Overflow";
     } else {
       myOBJ.status = "success";
       myOBJ.message = "The product of given numbers";
-      myOBJ.result = res;
+      myOBJ.result = result;
     }
   }
   res.send(myOBJ);
@@ -122,17 +122,17 @@ app.post("/divide", (req, res) => {
       myOBJ.status = "error";
       myOBJ.message = "Cannot divide by zero";
     } else {
-      const res = num1 / num2;
-      if (num1 < -1000000 || num2 < -1000000 || res < -1000000) {
+      const result = num1 / num2;
+      if (num1 < -1000000 || num2 < -1000000 || result < -1000000) {
         myOBJ.status = "error";
         myOBJ.message = "Underflow";
-      } else if (num1 > 1000000 || num2 > 1000000 || res > 1000000) {
+      } else if (num1 > 1000000 || num2 > 1000000 || result > 1000000) {
         myOBJ.status = "error";
         myOBJ.message = "Overflow";
       } else {
         myOBJ.status = "success";
         myOBJ.message = "The division of given numbers";
-        myOBJ.result = res;
+        myOBJ.result = result;
       }
     }
   }
