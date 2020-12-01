@@ -22,11 +22,6 @@ const myOBJ = {
 };
 
 app.post("/add", (req, res) => {
-  // const myOBJ = {
-  //   status: "",
-  //   message: "",
-  //   sum: 0,
-  // };
   const num1 = Number(req.body.num1);
   const num2 = Number(req.body.num2);
 
@@ -51,11 +46,6 @@ app.post("/add", (req, res) => {
 });
 
 app.post("/sub", (req, res) => {
-  // const myOBJ = {
-  //   status: "",
-  //   message: "",
-  //   difference: 0,
-  // };
   const num1 = Number(req.body.num1);
   const num2 = Number(req.body.num2);
 
@@ -80,12 +70,6 @@ app.post("/sub", (req, res) => {
 });
 
 app.post("/multiply", (req, res) => {
-  // const myOBJ = {
-  //   status: "",
-  //   message: "",
-  //   result: 0,
-  // };
-
   const num1 = Number(req.body.num1);
   const num2 = Number(req.body.num2);
 
@@ -110,12 +94,6 @@ app.post("/multiply", (req, res) => {
 });
 
 app.post("/divide", (req, res) => {
-  // const myOBJ = {
-  //   status: "",
-  //   message: "",
-  //   result: 0,
-  // };
-
   const num1 = Number(req.body.num1);
   const num2 = Number(req.body.num2);
 
