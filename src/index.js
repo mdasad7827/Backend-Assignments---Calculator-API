@@ -16,30 +16,24 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-const num1 = Number(req.body.num1);
-const num2 = Number(req.body.num2);
 const myOBJ = {
   status: "",
   message: "",
 };
 
-if (isNaN(num1) || isNaN(num2)) {
-  myOBJ.status = "error";
-  myOBJ.message = "Invalid data types";
-} else {
-  app.post("/add", (req, res) => {
-    // const myOBJ = {
-    //   status: "",
-    //   message: "",
-    //   sum: 0,
-    // };
-    // const num1 = Number(req.body.num1);
-    // const num2 = Number(req.body.num2);
+app.post("/add", (req, res) => {
+  // const myOBJ = {
+  //   status: "",
+  //   message: "",
+  //   sum: 0,
+  // };
+  const num1 = Number(req.body.num1);
+  const num2 = Number(req.body.num2);
 
-    // if (isNaN(num1) || isNaN(num2)) {
-    //   myOBJ.status = "error";
-    //   myOBJ.message = "Invalid data types";
-    // } else {
+  if (isNaN(num1) || isNaN(num2)) {
+    myOBJ.status = "error";
+    myOBJ.message = "Invalid data types";
+  } else {
     const result = num1 + num2;
     if (num1 < -1000000 || num2 < -1000000 || result < -1000000) {
       myOBJ.status = "error";
@@ -52,23 +46,23 @@ if (isNaN(num1) || isNaN(num2)) {
       myOBJ.message = "the sum of given two numbers";
       myOBJ.sum = result;
     }
-    // }
-    // res.send(myOBJ);
-  });
+  }
+  res.send(myOBJ);
+});
 
-  app.post("/sub", (req, res) => {
-    // const myOBJ = {
-    //   status: "",
-    //   message: "",
-    //   difference: 0,
-    // };
-    // const num1 = Number(req.body.num1);
-    // const num2 = Number(req.body.num2);
+app.post("/sub", (req, res) => {
+  // const myOBJ = {
+  //   status: "",
+  //   message: "",
+  //   difference: 0,
+  // };
+  const num1 = Number(req.body.num1);
+  const num2 = Number(req.body.num2);
 
-    // if (isNaN(num1) || isNaN(num2)) {
-    //   myOBJ.status = "error";
-    //   myOBJ.message = "Invalid data types";
-    // } else {
+  if (isNaN(num1) || isNaN(num2)) {
+    myOBJ.status = "error";
+    myOBJ.message = "Invalid data types";
+  } else {
     const result = num1 - num2;
     if (num1 < -1000000 || num2 < -1000000 || result < -1000000) {
       myOBJ.status = "error";
@@ -81,24 +75,24 @@ if (isNaN(num1) || isNaN(num2)) {
       myOBJ.message = "the difference of given two numbers";
       myOBJ.difference = result;
     }
-    // }
-    // res.send(myOBJ);
-  });
+  }
+  res.send(myOBJ);
+});
 
-  app.post("/multiply", (req, res) => {
-    // const myOBJ = {
-    //   status: "",
-    //   message: "",
-    //   result: 0,
-    // };
+app.post("/multiply", (req, res) => {
+  // const myOBJ = {
+  //   status: "",
+  //   message: "",
+  //   result: 0,
+  // };
 
-    // const num1 = Number(req.body.num1);
-    // const num2 = Number(req.body.num2);
+  const num1 = Number(req.body.num1);
+  const num2 = Number(req.body.num2);
 
-    // if (isNaN(num1) || isNaN(num2)) {
-    //   myOBJ.status = "error";
-    //   myOBJ.message = "Invalid data types";
-    // } else {
+  if (isNaN(num1) || isNaN(num2)) {
+    myOBJ.status = "error";
+    myOBJ.message = "Invalid data types";
+  } else {
     const result = num1 * num2;
     if (num1 < -1000000 || num2 < -1000000 || result < -1000000) {
       myOBJ.status = "error";
@@ -111,24 +105,24 @@ if (isNaN(num1) || isNaN(num2)) {
       myOBJ.message = "The product of given numbers";
       myOBJ.result = result;
     }
-    // }
-    // res.send(myOBJ);
-  });
+  }
+  res.send(myOBJ);
+});
 
-  app.post("/divide", (req, res) => {
-    // const myOBJ = {
-    //   status: "",
-    //   message: "",
-    //   result: 0,
-    // };
+app.post("/divide", (req, res) => {
+  // const myOBJ = {
+  //   status: "",
+  //   message: "",
+  //   result: 0,
+  // };
 
-    // const num1 = Number(req.body.num1);
-    // const num2 = Number(req.body.num2);
+  const num1 = Number(req.body.num1);
+  const num2 = Number(req.body.num2);
 
-    // if (isNaN(num1) || isNaN(num2)) {
-    //   myOBJ.status = "error";
-    //   myOBJ.message = "Invalid data types";
-    // } else {
+  if (isNaN(num1) || isNaN(num2)) {
+    myOBJ.status = "error";
+    myOBJ.message = "Invalid data types";
+  } else {
     if (num2 === 0) {
       myOBJ.status = "error";
       myOBJ.message = "Cannot divide by zero";
@@ -146,11 +140,9 @@ if (isNaN(num1) || isNaN(num2)) {
         myOBJ.result = result;
       }
     }
-    // }
-    // res.send(myOBJ);
-  });
-}
-res.send(myOBJ);
+  }
+  res.send(myOBJ);
+});
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
 
