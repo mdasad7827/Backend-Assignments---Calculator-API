@@ -121,20 +121,19 @@ app.post("/divide", (req, res) => {
     if (num2 === 0) {
       myOBJ.status = "error";
       myOBJ.message = "Cannot divide by zero";
-      break;
-    }
-
-    const res = num1 / num2;
-    if (num1 < -1000000 || num2 < -1000000 || res < -1000000) {
-      myOBJ.status = "error";
-      myOBJ.message = "Underflow";
-    } else if (num1 > 1000000 || num2 > 1000000 || res > 1000000) {
-      myOBJ.status = "error";
-      myOBJ.message = "Overflow";
     } else {
-      myOBJ.status = "success";
-      myOBJ.message = "The division of given numbers";
-      myOBJ.result = res;
+      const res = num1 / num2;
+      if (num1 < -1000000 || num2 < -1000000 || res < -1000000) {
+        myOBJ.status = "error";
+        myOBJ.message = "Underflow";
+      } else if (num1 > 1000000 || num2 > 1000000 || res > 1000000) {
+        myOBJ.status = "error";
+        myOBJ.message = "Overflow";
+      } else {
+        myOBJ.status = "success";
+        myOBJ.message = "The division of given numbers";
+        myOBJ.result = res;
+      }
     }
   }
   res.send(myOBJ);
